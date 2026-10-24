@@ -1,25 +1,35 @@
+<div align="center">
+
+<img src="docs/assets/social-card.png" alt="ALinear Study Skills. Claude asks the questions. Find what you don't know before your exam does." width="820">
+
 # ALinear Study Skills
 
 **Find what you don't know before your exam does. Claude asks the questions, and you do the thinking.**
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-98bb6c.svg)](LICENSE)
 [![Dependencies](https://img.shields.io/badge/dependencies-none-7e9cd8.svg)](skills/test-mind-map/scripts/map_checks.py)
-[![Skills](https://img.shields.io/badge/skills-4-ffe271.svg)](#the-skills)
+[![Skills](https://img.shields.io/badge/skills-4-e6c384.svg)](#the-skills)
+
+</div>
 
 Asking an AI to explain a topic feels like studying. The AI does most of the work, though, and the gaps in your own understanding stay hidden until the exam finds them. These four skills turn that around. Claude asks one question at a time, you answer from memory, and a right answer you weren't sure of counts as a gap. Each session ends with a ranked list of what to fix and when to test yourself again.
 
-The plugin is four Markdown skills and one Python script that uses only the standard library. It needs no account or API key, and it sends nothing anywhere.
+The plugin is four Markdown skills and one Python script that uses only the standard library. Beyond the Claude app you already use, it needs no account or API key, and it sends nothing anywhere.
 
-## Install
+![Asking for a photosynthesis quiz, answering from memory, Claude marking an answer the student was sure of as wrong, then the ranked gap report and the date of the next session](docs/assets/demo.gif)
 
-### Claude Code
+The demo is a real session, recorded in Claude Code. A second Claude call played the student. It answered from a fixed profile of what the student knows and gets wrong. The GIF skips the middle of the session.
+
+## Quick start
+
+You need Claude Code. For claude.ai and Cowork, see below.
 
 ```sh
 claude plugin marketplace add SedWilliams/alinear_skills
 claude plugin install alinear-study@alinear
 ```
 
-Start a new session and the skills load. Claude picks the right one from what you ask, or you can call one by name, such as `/alinear-study:gap-finder`.
+Start a new session and ask for a quiz on something you've studied, such as `Quiz me on the Krebs cycle. My exam is Friday.` Claude picks the right skill from what you ask, or you can call one by name, such as `/alinear-study:gap-finder`.
 
 ### claude.ai and Cowork
 
@@ -38,13 +48,21 @@ Each one works on its own. They share one set of gap types (Locked, Missing, Wro
 
 ## Try it
 
+Clone the repository and start Claude Code inside it, so the prompts below can find the example files:
+
+```sh
+git clone https://github.com/SedWilliams/alinear_skills.git
+cd alinear_skills
+claude
+```
+
 The `examples/` folder has material to try the skills on:
 
 - `photosynthesis-notes.md`: one page of source notes.
 - `photosynthesis-map.json`: a student's mid-study map of the same topic, with some holes in it.
 - `alinear-workspace.json` and `alinear-prompt.txt`: ALinear's built-in photosynthesis example, as a workspace export and as the text of its Build AI prompt.
 
-Three prompts, one per kind of session:
+Three prompts, one per kind of session. The first one starts the session in the demo.
 
 1. `Quiz me on photosynthesis using examples/photosynthesis-notes.md. I studied it yesterday.`
 2. `Test my mind map in examples/photosynthesis-map.json against examples/photosynthesis-notes.md. It's a mid-study draft.`
@@ -88,16 +106,23 @@ claude plugin validate --strict .                                               
 python3 skills/test-mind-map/scripts/map_checks.py examples/photosynthesis-map.json  # structure report for the sample map
 python3 skills/test-mind-map/scripts/map_checks.py examples/alinear-workspace.json   # same checks on an ALinear export
 claude --plugin-dir .                                                               # one session with the skills, no install
+node marketing/tools/assets.mjs                                                     # rebuild the README images from the recorded session
 ```
+
+The README images come from a real session. `node marketing/tools/record.mjs` runs gap-finder in Claude Code with only this plugin loaded. It works in a throwaway folder that holds the sample notes, and a second Claude call plays the student. It saves the transcript to `marketing/tools/session.json`. `node marketing/tools/assets.mjs` draws that transcript as `docs/assets/demo.gif` and `docs/assets/social-card.png` and makes no Claude calls. Recording uses a few dollars of Claude usage, so record again only when gap-finder changes. The assets script warns you when it has.
 
 ```text
 .claude-plugin/     plugin.json and marketplace.json
 skills/             one folder per skill: SKILL.md, references/, scripts/
 examples/           sample notes, a sample map, and ALinear's example export
 assets/icon.png     the listing icon
+marketing/tools/    README image capture and the recorded session, not part of the plugin
+docs/assets/        the images this README shows
 ```
 
-Issues and pull requests are welcome.
+## Contributing
+
+Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for setup and the checks to run before a pull request.
 
 ## License
 

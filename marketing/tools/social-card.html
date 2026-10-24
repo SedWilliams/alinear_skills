@@ -1,0 +1,124 @@
+<!--
+  Source for docs/assets/social-card.png, the 1280x640 image GitHub shows when the repo is
+  linked from Slack, X, Discord, or anywhere else that unfurls a URL, and the README's hero.
+  assets.mjs adds the fonts and the chat styles, and replaces the session comment below with
+  an exchange from the recorded session. Colors are ALinear's theme tokens (render.mjs).
+-->
+<style>
+  body {
+    width: 1280px;
+    height: 640px;
+    box-sizing: border-box;
+    padding: 60px 72px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    background:
+      radial-gradient(980px 520px at 86% 16%, rgba(126, 156, 216, 0.13), transparent 62%),
+      radial-gradient(760px 420px at 2% 100%, rgba(152, 187, 108, 0.11), transparent 60%),
+      #16161d;
+    color: #dcd7ba;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 44px;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font: 500 17px GeistMono;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #98bb6c;
+  }
+
+  .eyebrow img {
+    width: 40px;
+    height: 40px;
+  }
+
+  h1 {
+    margin: 22px 0 0;
+    font: 400 96px/0.98 Serif;
+    letter-spacing: -0.01em;
+    color: #f2ecd2;
+  }
+
+  .tagline {
+    margin: 26px 0 0;
+    font: 400 28px/1.4 Geist;
+    color: #938aa9;
+  }
+
+  .tagline b {
+    font-weight: 600;
+    color: #f2ecd2;
+  }
+
+  .card-win {
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  }
+
+  .card-win .win {
+    border-radius: 12px;
+  }
+
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid #363646;
+    font: 500 18px GeistMono;
+    color: #938aa9;
+  }
+
+  /* The four skills, with the three colors of the plugin icon and ALinear's red. */
+  .skills {
+    display: flex;
+    gap: 26px;
+  }
+
+  .skills i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    vertical-align: 1px;
+  }
+
+  .repo {
+    color: #98bb6c;
+  }
+</style>
+
+<div class="hero">
+  <div>
+    <div class="eyebrow"><!-- icon -->A Claude plugin for students</div>
+    <h1>ALinear<br />Study Skills</h1>
+    <p class="tagline">Claude asks the questions.<br />Find what you don't know<br /><b>before your exam does.</b></p>
+  </div>
+  <div class="card-win"><!-- session --></div>
+</div>
+
+<footer>
+  <div class="skills">
+    <span><i style="background: #ffde6e"></i>gap-finder</span>
+    <span><i style="background: #86b590"></i>test-mind-map</span>
+    <span><i style="background: #8aa9d1"></i>mind-map-dump</span>
+    <span><i style="background: #e46876"></i>retrieval-plan</span>
+  </div>
+  <div class="repo">github.com/SedWilliams/alinear_skills</div>
+</footer>
