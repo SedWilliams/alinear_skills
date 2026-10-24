@@ -1,0 +1,41 @@
+{
+  "title": "Photosynthesis (mid-study map, transcribed from a photo)",
+  "center": "t",
+  "nodes": [
+    {"id": "t", "label": "Photosynthesis"},
+    {"id": "lr", "label": "Light reactions"},
+    {"id": "cc", "label": "Calvin cycle"},
+    {"id": "lf", "label": "Limiting factors"},
+    {"id": "chl", "label": "chlorophyll absorbs light [sun doodle]"},
+    {"id": "thy", "label": "thylakoid"},
+    {"id": "split", "label": "water split"},
+    {"id": "o2", "label": "O2 released"},
+    {"id": "etc", "label": "electron transport"},
+    {"id": "atp", "label": "ATP + NADPH"},
+    {"id": "rub", "label": "Rubisco fixes CO2"},
+    {"id": "g3p", "label": "G3P"},
+    {"id": "glu", "label": "glucose"},
+    {"id": "str", "label": "stroma"},
+    {"id": "li", "label": "light intensity"},
+    {"id": "co2", "label": "CO2 level"},
+    {"id": "temp", "label": "temperature"}
+  ],
+  "edges": [
+    {"from": "t", "to": "lr", "arrow": false},
+    {"from": "t", "to": "cc", "arrow": false},
+    {"from": "t", "to": "lf", "arrow": false},
+    {"from": "lr", "to": "chl"},
+    {"from": "lr", "to": "thy", "arrow": false},
+    {"from": "lr", "to": "split"},
+    {"from": "lr", "to": "etc"},
+    {"from": "lr", "to": "atp", "label": "makes"},
+    {"from": "split", "to": "o2", "label": "releases"},
+    {"from": "cc", "to": "rub"},
+    {"from": "rub", "to": "g3p"},
+    {"from": "g3p", "to": "glu"},
+    {"from": "cc", "to": "str", "arrow": false},
+    {"from": "lf", "to": "li"},
+    {"from": "lf", "to": "co2"},
+    {"from": "lf", "to": "temp"}
+  ]
+}

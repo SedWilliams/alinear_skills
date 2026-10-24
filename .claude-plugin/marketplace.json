@@ -1,0 +1,17 @@
+{
+  "name": "alinear",
+  "description": "Study skills from the maker of ALinear, a free study workspace.",
+  "owner": {
+    "name": "Shedrick Williams",
+    "url": "https://shedrickwilliams.me"
+  },
+  "plugins": [
+    {
+      "name": "alinear-study",
+      "source": "./",
+      "description": "Study sessions where Claude asks and you answer. Finds the gaps in what you know about a topic, reviews your mind maps without redrawing them, marks brain dumps against your material, and plans spaced review.",
+      "category": "learning",
+      "tags": ["study", "retrieval-practice", "mind-map", "exam-prep"]
+    }
+  ]
+}
