@@ -1,6 +1,6 @@
 ---
 name: test-mind-map
-description: Review a mind map or concept map, then question the learner about its weak spots one at a time, so they find out which holes are real knowledge gaps and which are only things the map left out. Checks structure (backbone, cross-links, labeled links, branch counts) against concept-mapping research and never redraws or regroups the map for them. Use when the user shares a mind map, concept map, chunk map, or ALinear workspace (a photo, image, JSON export, the text of ALinear's Build AI prompt, an outline, or Mermaid) and asks to test it, review it, find holes or gaps, grill them on it, or check whether it's good. To mark a map drawn from memory against the source material, use mind-map-dump. For a topic with no map, use gap-finder.
+description: Review a mind map or concept map, then question the learner about its weak spots one at a time, so they find holes and real knowledge gaps. Checks structure (backbone, cross-links, labeled links, branch counts) against concept-mapping research and never redraws or regroups the map for them. Use when the user shares a mind map, concept map, chunk map, or ALinear workspace (a photo, image, JSON export, the text of ALinear's Build AI prompt, an outline, or Mermaid) and asks to test it, review it, find holes or gaps, grill them on it, or check whether it's good. To mark a map drawn from memory against the source material, use mind-map-dump. For a topic with no map, use gap-finder.
 ---
 
 # Test mind map

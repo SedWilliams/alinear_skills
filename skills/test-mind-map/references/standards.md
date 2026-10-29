@@ -1,30 +1,43 @@
 # Map standards
 
-What a strong mind map or concept map looks like, and why. Use this file to judge maps and to write questions about their holes. References are at the end.
+What a strong mind map or concept map looks like, and why. Use this skill to judge maps, and find/ask questions about their holes. References are at the end of the skill.
+
+### TODO for this skill
+
+<i>Updates todo are in italics</i>
+
+* Fill in what each layer means
+* pass-through nodes?
 
 ## Contents
 1. What a map is for
 2. Map shapes: spoke, chain, net
-3. The backbone
-4. Groupings
-5. Links
-6. Branch counts and pass-through nodes
-7. Detail and layers
-8. Pictures and emphasis
-9. Standards by stage
-10. Gaps and retrieval
-11. Who does the thinking
-12. References
+3. Layers:
+  4. Backbone layer
+  5. Concepts layer
+  6. Detail layer
+7. Groupings a.k.a "Chunks"
+8. Links a.k.a Relationships between each chunk
+9. Branch counts and pass-through nodes
+11. Pictures/diagrams and emphasis
+12. Standards by stage
+13. Gaps and retrieval
+14. Who does the thinking
+15. References
 
 ## 1. What a map is for
 
 Building a map helps learning when the learner does the selecting, organizing, and connecting (Fiorella & Mayer, 2016). Across studies, working with concept maps went with better retention than reading text, attending lectures, or class discussion (Nesbit & Adesope, 2006). A map copied from the material, or one Claude reorganizes, skips the learner's part of that work.
 
+<i>Unslop this, I have no idea what it means or the purpose of this portion of text.</i>
 How the map was made changes what it shows:
-- Drawn with the material open, a map is a study product. It shows how the learner organized the material, not what they can recall.
-- Drawn from memory, a map is a test. Building a concept map from memory improved learning as much as writing out free recall (Blunt & Karpicke, 2014).
+- Drawn with the material open, a map is a mechanism for keeping notes. It shows how the learner organizes and understands the material, not what they can recall. Although the learner hopes to be able to recall all information in the map and more.
+- Drawn from memory, a map is a test (retrieval). Building a concept map from memory improved learning as much as writing out free recall (Blunt & Karpicke, 2014).
 
-A map is doing its job when what's already on the page makes the next link easier to think of, when each part can be tied back to the big picture, and when the learner keeps revising it as they understand more.
+<i>This portion is good. Missing some GRINDE, DAAPPR, and VPReFRE factors.</i>
+Factors that make a good mind map.
+* Each node and it's relationships are intuitive and the relationships serve as good memory cues.
+* Each node is connected to the backbone implying that the learner has related the specific chunk to the bigger picture.
 
 ## 2. Map shapes: spoke, chain, net
 
@@ -37,13 +50,15 @@ A finished map should be moving toward a net. The script flags a spoke shape (no
 
 ## 3. The backbone
 
-The backbone is the few biggest, most general ideas that everything else hangs from, plus the main relationships between them. Concept maps put the most general, inclusive ideas at the top or center and the more specific ones further out (Novak & Gowin, 1984). Teaching sequences that start broad and add detail in layers follow the same logic (Reigeluth, 1999).
+The backbone is composed of the biggest, most general ideas that everything else hangs from. Plus the main relationships between them, which logically and intuitively lead from one backbone concept to the next (again, serving as memory cues). 
+> Concept maps put the most general, inclusive ideas at the top or center and the more specific ones further out (Novak & Gowin, 1984). 
+> Teaching sequences that start broad and add detail in layers follow the same logic (Reigeluth, 1999).
 
-- Most topics have about 3 to 7 big ideas. Fewer can be right for a small topic. More usually means some are details.
+- The amount of logic chunks/nodes scales per subject covered/material density.
 - The big ideas should link to each other, not only to the center. A missing link between two big ideas costs more than a missing detail.
-- Warning signs: no clear backbone, a backbone that is the source's section headings, or detail crowding the map while the big ideas are missing or vague.
+- Warning signs: no clear backbone, a backbone that is the source's section headings, resembles the order of the source material, or detail crowding the map while the big ideas are missing or vague.
 
-## 4. Groupings
+## 4. Groupings/Chunks/Nodes
 
 - Experts group by underlying principle, and novices group by surface features (Chi, Feltovich & Glaser, 1981). A strong group exists because of what makes its members matter: the problem they solve, the mechanism they share, the cause they have in common. A weak group exists because its members share a label, a heading, or a position in the source.
 - Ask "why does this group matter?", then "so what?" until the question stops making sense. A group named for the deepest answer holds more, and links to other groups more easily, than one named for a nearby effect.
@@ -87,7 +102,7 @@ Pairing words with images helps memory (Paivio, 1986), and drawing a symbol make
 | Finished | Clear backbone, labeled and directed links, cross-links, important details | A spoke or chain shape, unlabeled links, missing important details |
 | From memory | The big ideas and their links | Missing or wrong ideas and links. Mark it with mind-map-dump. |
 
-## 10. Gaps and retrieval
+## Gaps and retrieval
 
 - A knowledge gap is anything the learner struggles to recall, gets wrong, or feels unsure about. A correct answer given with low confidence is still a gap (Butler, Karpicke & Roediger, 2008).
 - Always give an answer, even when unsure, before looking anything up. A wrong attempt that gets corrected helps memory (Kornell, Hays & Bjork, 2009).
@@ -96,7 +111,7 @@ Pairing words with images helps memory (Paivio, 1986), and drawing a symbol make
 - **Stored or reachable.** If a hint or the name brings an idea back, it was stored but poorly cued, and the fix is linking it into the map so its relationships cue it. If even the name doesn't bring it back, it needs re-learning (Tulving & Pearlstone, 1966).
 - Question levels for declarative knowledge, from lowest to highest: one fact, two ideas related, three or more related, and a judgment about which relationships matter most. For procedural knowledge: doing a single step, combining steps, working backwards from a goal, and edge cases.
 
-## 11. Who does the thinking
+## Who does the thinking
 
 The reviewer names problems and asks questions. The learner makes every decision about groups, links, and reasons. AI helps here by checking answers against the material and by writing questions. It does harm when it groups ideas or explains why they matter, because then the learner reads a structure instead of building one.
 
