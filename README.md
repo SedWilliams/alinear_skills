@@ -7,7 +7,7 @@
 **Find what you don't know before your exam does. Claude asks the questions, and you do the thinking.**
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-98bb6c.svg)](LICENSE)
-[![Dependencies](https://img.shields.io/badge/dependencies-none-7e9cd8.svg)](skills/test-mind-map/scripts/map_checks.py)
+[![Dependencies](https://img.shields.io/badge/dependencies-none-7e9cd8.svg)](skills/test-mind-map-v1/scripts/map_checks.py)
 [![Skills](https://img.shields.io/badge/skills-4-e6c384.svg)](#the-skills)
 
 </div>
@@ -102,11 +102,11 @@ I learned much of how I study from iCanStudy, Dr Justin Sung's learning program 
 ## Development
 
 ```sh
-claude plugin validate --strict .                                                   # manifests and skill front matter
-python3 skills/test-mind-map/scripts/map_checks.py examples/photosynthesis-map.json  # structure report for the sample map
-python3 skills/test-mind-map/scripts/map_checks.py examples/alinear-workspace.json   # same checks on an ALinear export
-claude --plugin-dir .                                                               # one session with the skills, no install
-node marketing/tools/assets.mjs                                                     # rebuild the README images from the recorded session
+claude plugin validate --strict .                                                      # manifests and skill front matter
+python3 skills/test-mind-map-v1/scripts/map_checks.py examples/photosynthesis-map.json  # structure report for the sample map
+python3 skills/test-mind-map-v1/scripts/map_checks.py examples/alinear-workspace.json   # same checks on an ALinear export
+claude --plugin-dir .                                                                  # one session with the skills, no install
+node marketing/tools/assets.mjs                                                        # rebuild the README images from the recorded session
 ```
 
 The README images come from a real session. `node marketing/tools/record.mjs` runs gap-finder in Claude Code with only this plugin loaded. It works in a throwaway folder that holds the sample notes, and a second Claude call plays the student. It saves the transcript to `marketing/tools/session.json`. `node marketing/tools/assets.mjs` draws that transcript as `docs/assets/demo.gif` and `docs/assets/social-card.png` and makes no Claude calls. Recording uses a few dollars of Claude usage, so record again only when gap-finder changes. The assets script warns you when it has.

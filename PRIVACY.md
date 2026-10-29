@@ -7,7 +7,7 @@ ALinear Study Skills is a Claude plugin made of instructions (skills) and one lo
 ## What the plugin does with your data
 
 - The skills are text that tells Claude how to run a study session. Claude follows them inside your conversation.
-- `skills/test-mind-map/scripts/map_checks.py` runs wherever Claude runs code for you. It reads only the map file it's given, prints a report, and writes nothing.
+- `skills/test-mind-map-v1/scripts/map_checks.py` runs wherever Claude runs code for you. It reads only the map file it's given, prints a report, and writes nothing.
 - The plugin's author receives nothing from your sessions: no conversation content, files, or answers.
 
 ## What other services see

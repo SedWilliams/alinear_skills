@@ -15,9 +15,9 @@ claude --plugin-dir .
 ## Before you open a pull request
 
 ```sh
-claude plugin validate --strict .                                                   # must pass with nothing to report
-python3 skills/test-mind-map/scripts/map_checks.py examples/photosynthesis-map.json  # must print a report, not an error
-python3 skills/test-mind-map/scripts/map_checks.py examples/alinear-workspace.json   # same, for an ALinear export
+claude plugin validate --strict .                                                      # must pass with nothing to report
+python3 skills/test-mind-map-v1/scripts/map_checks.py examples/photosynthesis-map.json  # must print a report, not an error
+python3 skills/test-mind-map-v1/scripts/map_checks.py examples/alinear-workspace.json   # same, for an ALinear export
 ```
 
 If your change alters gap-finder, record a new session and regenerate the README images, then commit them with your change:

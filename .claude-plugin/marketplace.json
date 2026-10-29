@@ -1,9 +1,9 @@
 {
   "name": "alinear",
-  "description": "Study skills from the maker of ALinear, a free study workspace.",
+  "description": "Study skills from the maker of ALinear, a study workspace that prioritizes human understanding.",
   "owner": {
     "name": "Shedrick Williams",
-    "url": "https://shedrickwilliams.me"
+    "url": "https://shedrickwilliams.site"
   },
   "plugins": [
     {
