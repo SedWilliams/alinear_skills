@@ -1,8 +1,8 @@
 {
   "name": "alinear-study",
   "displayName": "ALinear Study Skills",
-  "version": "0.2.0",
-  "description": "Study sessions where Claude asks and you answer. Finds the gaps in what you know about a topic, reviews your mind maps without redrawing them, marks brain dumps against your material, and plans spaced review.",
+  "version": "0.3.0",
+  "description": "Study sessions where Claude asks and you answer. Finds the gaps in what you know about a topic, reviews your mind maps without redrawing them, marks brain dumps against your material, and picks the best interleaving technique for each review session.",
   "author": {
     "name": "Shedrick Williams",
     "url": "https://shedrickwilliams.me"

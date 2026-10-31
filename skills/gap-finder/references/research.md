@@ -1,6 +1,6 @@
 # The research behind the rules
 
-Each rule in this plugin rests on published research on learning and memory. This file gives the short version of each finding and how the skills use it. Full references are at the end. You don't need to cite these to the learner. Cite them when the learner asks why a rule exists.
+The rules in this skill come from the user's Learning Science notes in Notion (`learning-science.md`), which are the source of truth. This file adds published research on learning and memory that supports those rules. It gives the short version of each finding and how the skill uses it. Full references are at the end. Where a finding here and the notes differ, follow the notes. You don't need to cite these to the learner. Cite them when the learner asks why a rule exists.
 
 ## Contents
 1. Testing finds gaps and builds memory
@@ -76,7 +76,7 @@ Spreading practice over time beats cramming it into one sitting, across hundreds
 
 ## 12. Mixing and varying
 
-In the research sense, interleaving means mixing problem types within one practice set, so the learner has to pick the method for each problem. Mixed sets beat blocked practice on later maths tests (Rohrer & Taylor, 2007), and mixing examples from different categories improved category learning (Kornell & Bjork, 2008). The skills also vary the retrieval method between sessions. That part is a design choice, not a tested finding. A learner who has adapted to one question format can pass it without knowing the material any better.
+In the research sense, interleaving means mixing problem types within one practice set, so the learner has to pick the method for each problem. Mixed sets beat blocked practice on later maths tests (Rohrer & Taylor, 2007), and mixing examples from different categories improved category learning (Kornell & Bjork, 2008). The user's notes use "interleaving" more broadly, for reviewing from multiple angles, and they call for a different technique in each session. The studies above don't test that part directly. It comes from the notes. A learner who has adapted to one question format can pass it without knowing the material any better.
 
 ## 13. Explaining, teaching, and writing questions
 

@@ -27,15 +27,15 @@ Before asking, check that the question:
 ## A. Backbone (Bloom 4–5, run first)
 
 **A1. Mind-map brain dump**
-> Without your notes: what are the 3–4 biggest ideas in <topic>, and how does each one connect to the others? Arrows and keywords are fine. Full sentences aren't needed.
+> Without your notes: what are the 3–4 biggest chunks of <topic>, and how does each one connect to the others? Arrows and keywords are fine. Full sentences aren't needed.
 
 Gap signals:
-- A backbone idea is missing: **Missing** or **Blind spot**, backbone severity.
-- Ideas are listed but not linked, or linked with "relates to": **Unlinked**.
-- The structure copies the order of the lecture or textbook. Probe with C3.
-- A detail is promoted to a big idea, or the big ideas are just section headings. Probe with C1.
+- A backbone chunk is missing: **Missing** or **Blind spot**, backbone severity.
+- Chunks are listed but not linked, or linked with "relates to": **Unlinked** (an island).
+- The structure copies the order of the lecture or textbook: poor order control. Probe with C3.
+- A detail is promoted to a chunk, or the chunks are just headings: unintuitive chunking. Probe with C1.
 
-**A2. Plain-language explanation**
+**A2. Teach challenge**
 > Explain to a 10-year-old why <topic> exists: what problem it solves. Don't use these words: <2–4 key terms>.
 
 Gap signals:
@@ -45,7 +45,7 @@ Gap signals:
 **A3. Backbone from a cold cue**
 > Someone hands you <a realistic artifact: an exam stem, a code file, a case>. Before solving anything, which big ideas from <topic> are in play, and in what order would you reach for them?
 
-Gap signal: they pick the wrong ideas, or can't sequence them: **Can't apply**, backbone severity.
+Gap signal: they pick the wrong chunks, or can't sequence them: **Can't apply**, backbone severity.
 
 ## B. Links (Bloom 2–4)
 
@@ -83,10 +83,10 @@ Gap signal: they rank without reasons, or their "what breaks" is wrong: **Wrong*
 
 Gap signal: they accept it whole or reject it whole: **Wrong**. Write the half-truth around a misconception that is actually likely for this topic.
 
-**C3. Alternative structure**
-> Suppose you reorganized <topic> around <a repeated element or a different axis>. What would the big groups be? Is that structure better or worse than yours, and why?
+**C3. Alternative structure** (reverse chunking)
+> Suppose you reorganized <topic> around <a repeated element or a different axis>. What would the chunks be? Is that structure better or worse than yours, and why?
 
-Gap signal: they can't regroup the material at all. Their understanding is rigid, memorized in one order: **Unlinked**, backbone severity.
+Gap signal: they can't regroup the material at all. The schema is rigid, memorized in one order: **Unlinked**, backbone severity.
 
 ## D. Use (Bloom 3–6)
 
@@ -123,10 +123,10 @@ Gap signal: the prediction contradicts the result they then compute: **Shaky** o
 ## E. Create (Bloom 6)
 
 **E1. Hardest question**
-> Write the hardest question you can about <idea>, one that would catch someone who memorized it without understanding it. Then answer it.
+> Write the hardest question you can about <chunk>, one that would catch someone who memorized it without understanding it. Then answer it.
 
 Judge the question first: is it relevant, higher-order, and solvable? Then judge the answer.
-- A weak question means **Can't create**: they can't yet see what matters about it and why.
+- A weak question means **Can't create**: the schema's importance and purpose are unclear.
 - A good question with a weak answer means **Can't apply**.
 
 **E2. Make an edge case**
@@ -146,14 +146,14 @@ Ask these only for details the assessment needs and the earlier rounds didn't al
 
 ## Judging a brain dump
 
-Compare it with your silent map from SKILL.md step 2:
-1. List the backbone ideas that are missing, the links that are missing, and the links that are wrong.
+Compare it with your silent map from step 2:
+1. List the backbone chunks that are missing, the links that are missing, and the links that are wrong.
 2. Pick the **most severe** item and ask about it next (a B or C question). Don't read out the whole list: that hands over the map.
 3. Log the rest as provisional gaps. If a later question shows they do know an item, remove it.
 
 ## Worked example: MIPS assembly midterm
 
-A computer architecture midterm on storage, integer representation, and MIPS assembly.
+This example is built from the user's "Midterm retrieval" page, which covers storage, integer representation and assembly.
 
 **Silent map**
 - **Backbone:**
@@ -171,7 +171,7 @@ A computer architecture midterm on storage, integer representation, and MIPS ass
 
 | # | Round | Question | Full answer contains |
 |---|---|---|---|
-| 1 | A1 | Without notes: what are the 3–4 big ideas your midterm covers, and how does each depend on the others? | The four backbone ideas, with links. For example, representation decides which shift and branch instructions you use; addressing decides how loads and stores are written. |
+| 1 | A1 | Without notes: what are the 3–4 big chunks your midterm covers, and how does each depend on the others? | The four backbone chunks, with links. For example, representation decides which shift and branch instructions you use; addressing decides how loads and stores are written. |
 | 2 | A2 | Explain to a 10-year-old why a computer needs a special way to store negative numbers. Don't say "bit", "sign" or "complement". | A fixed number of slots; plain adding should still work for negative numbers; there's a wrap-around (odometer) idea. |
 | 3 | B1 | How does byte addressing change the way you index into a `.word` array, compared with a `.byte` array? | Each word is 4 bytes, so offset = index × 4 (often `sll` by 2). For bytes, offset = index. |
 | 4 | B3 | `la $t0, x` and `lw $t0, x`: what ends up in `$t0` for each, and when do you need the first before using `lw`? | `la` gives x's address and `lw` gives the word stored at x. You need `la` for the base address before indexed access like `lw $t1, 8($t0)`. |
@@ -183,13 +183,13 @@ A computer architecture midterm on storage, integer representation, and MIPS ass
 | 10 | F1 | Convert -20 to 8-bit two's complement, then to hex. | `11101100`, `0xEC` |
 
 **Example gap entries**
-- Q4 answer: "`lw` gives the address." This is **Wrong**, link severity. Fix: draw the register-to-memory boundary and put `la` and `lw` on either side of it.
-- Q7: correct for `sra`, tagged "guess", and wrong for `srl`. Log **Shaky** for `sra` and **Wrong** for `srl`, link severity, because the gap is the link between two's complement and the shifts. Fix: relate both shifts to division and sign.
-- Q9: they wrote "What does `bne` stand for?" That is a recall question, not a hard one. Log **Can't create** for control flow, and re-learn it around why the signed and unsigned variants exist.
+- Q4 answer: "`lw` gives the address." This is **Wrong**, link severity. Re-encode: draw the register-to-memory boundary and put `la` and `lw` on either side of it.
+- Q7: correct for `sra`, tagged "guess", and wrong for `srl`. Log **Shaky** for `sra` and **Wrong** for `srl`, link severity, because the gap is the link between two's complement and the shifts. Re-encode by relating both shifts to division and sign.
+- Q9: they wrote "What does `bne` stand for?" That is a recall question, not a hard one. Log **Can't create** for control flow, and re-encode around why the signed and unsigned variants exist.
 
 ## Short example: discrete maths logic
 
-A discrete maths unit on propositional logic and sets: DNF, power set notation, tautology, contradiction, conditional.
+From the user's "Retrieval" page: DNF, power set notation, tautology, contradiction, conditional.
 
 | Round | Question | Full answer contains |
 |---|---|---|

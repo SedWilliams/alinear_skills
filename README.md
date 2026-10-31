@@ -7,14 +7,14 @@
 **Find what you don't know before your exam does. Claude asks the questions, and you do the thinking.**
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-98bb6c.svg)](LICENSE)
-[![Dependencies](https://img.shields.io/badge/dependencies-none-7e9cd8.svg)](skills/test-mind-map-v1/scripts/map_checks.py)
+[![Dependencies](https://img.shields.io/badge/dependencies-none-7e9cd8.svg)](skills/test-mind-map/scripts/map_checks.py)
 [![Skills](https://img.shields.io/badge/skills-4-e6c384.svg)](#the-skills)
 
 </div>
 
 Asking an AI to explain a topic feels like studying. The AI does most of the work, though, and the gaps in your own understanding stay hidden until the exam finds them. These four skills turn that around. Claude asks one question at a time, you answer from memory, and a right answer you weren't sure of counts as a gap. Each session ends with a ranked list of what to fix and when to test yourself again.
 
-The plugin is four Markdown skills. It also keeps the previous version of test-mind-map, which includes one Python script that uses only the standard library. Beyond the Claude app you already use, it needs no account or API key, and it sends nothing anywhere.
+The plugin is four Markdown skills, plus one Python script in test-mind-map that uses only the standard library. Beyond the Claude app you already use, it needs no account or API key, and it sends nothing anywhere. The rules follow my Learning Science notes on iCanStudy, kept in Notion, with published research as support. Where I can reach those notes through `notion-cli`, the skills can re-check a rule against its page. Everyone else gets the copy written into each skill.
 
 ![Asking for a photosynthesis quiz, answering from memory, Claude marking an answer the student was sure of as wrong, then the ranked gap report and the date of the next session](docs/assets/demo.gif)
 
@@ -42,9 +42,9 @@ Download this repository as a zip. In claude.ai or the desktop app, go to **Cust
 | `gap-finder` | "Quiz me on the Krebs cycle. My exam is Friday." | One question at a time, big ideas first, with a confidence tag on every answer. Ends with a gap report and a date for the next session. |
 | `test-mind-map` | "Here's my mind map of the French Revolution. Grill me on it." | Finds the defects in the map one question at a time, then works out which building habits caused them. Ends with a report of techniques to fix each one. It never redraws your map. |
 | `mind-map-dump` | "I drew this from memory. Here are my lecture slides. What did I miss?" | Marks what you recalled against your material as right, wrong, missing, or unsure, with the big ideas weighted most. |
-| `retrieval-plan` | "How should I revise organic chemistry this week? I have three hours." | Picks techniques that fit the material and how long ago you learned it, then turns each gap into a fix and a retest date. |
+| `best-interleaving-technique` | "Which interleaving technique should I use to revise organic chemistry this week? I have three hours." | Picks the techniques that will find the most gaps for the material, the assessment, and where you are in your review schedule. Explains how to do each one properly, then hands off to the skill that runs it. |
 
-Each one works on its own. They share one set of gap types (Locked, Missing, Wrong, Shaky, Unlinked, Can't apply, Can't create, Blind spot), so reports from different sessions line up.
+Each one works on its own. gap-finder and test-mind-map share one set of gap types (Locked, Missing, Wrong, Shaky, Unlinked, Can't apply, Can't create, Blind spot), so reports from different sessions line up.
 
 ## How test-mind-map works
 
@@ -56,7 +56,7 @@ Before the first question, Claude reads the whole map and checks it for more tha
 
 Then it asks one question per turn. You answer from memory with the map hidden, tagged "sure" or "unsure". Each suspected defect takes three turns. Claude tests it with a question that names the place on your map, reads your answer and logs any gap, then asks how that part was built. That last question separates a technique that can't work from a good technique done wrong. A map that felt smooth and quick to build usually came from transcribing. One that felt slow and uncertain usually came from real thinking, even if it still has defects. If your material has an idea your map lacks, Claude climbs a cue ladder from no cue, to a partial cue, to the name, so it never names the idea first. It ends the session only when you say "finish".
 
-It won't make or reorganize your map. It doesn't suggest group names, groupings, or what a link should say, because then you'd be reading a structure instead of building one. If you ask for a fixed map, it says why and offers a technique and a question instead. When you see a problem but not the fix, it demonstrates the technique on a bread-baking map, then asks you to apply it to yours.
+It won't make or reorganize your map. It doesn't suggest group names, groupings, or what a link should say, because then you'd be reading a structure instead of building one. If you ask for a fixed map, it says why and offers a technique and a question instead. When you see a problem but not the fix, it demonstrates the technique on a worked example from another topic, a colonial-history map or a bread-baking map, then asks you to apply it to yours.
 
 When you say "finish", you get a short report:
 
@@ -68,9 +68,9 @@ When you say "finish", you get a short report:
 
 It then offers to save the report as markdown or add it to your notes, which it does only after you say yes. It also offers a gap-finder session if the gaps reach past the map into the topic, and a retest of the reworked map later.
 
-The standards come from concept-mapping research and from iCanStudy's GRINDE, DAAPPR, and VPReFRE checklists. They all live in one file, `skills/test-mind-map/SKILL.md`, with the citations at the end.
+The standards come from my Learning Science notes on iCanStudy (GRINDE, DAAPPR, VPReFRE, the 2-4 rule, and the layers of learning), with concept-mapping research as support. They all live in one file, `skills/test-mind-map/SKILL.md`, with the Notion pages and citations at the end.
 
-The previous version is kept in `skills/test-mind-map-v1/`. Claude never picks it on its own. Call `/alinear-study:test-mind-map-v1` to run it. It's the one that runs `map_checks.py`, a Python script that counts branches, cross-links, and separate clusters before the questions start.
+To count structure instead of eyeballing it, the skill can run `scripts/map_checks.py`, a Python script that counts branches, single-node chains, lateral links, and separate clusters before the questions start.
 
 ## Try it
 
@@ -92,7 +92,7 @@ Three prompts, one per kind of session. The first one starts the session in the 
 
 1. `Quiz me on photosynthesis using examples/photosynthesis-notes.md. I studied it yesterday.`
 2. `Test my mind map in examples/photosynthesis-map.json against examples/photosynthesis-notes.md. It's a mid-study draft.`
-3. `I have a biology midterm in two weeks on photosynthesis and cellular respiration. Plan my review sessions.`
+3. `I have a biology midterm in two weeks on photosynthesis and cellular respiration. Which interleaving technique should I use for my next review session?`
 
 ## Why it won't just tell you the answer
 
@@ -110,7 +110,7 @@ I also built [ALinear](https://alinear-gold.vercel.app), a study workspace for c
 
 ## Privacy
 
-The plugin has no server and makes no network requests. The skills are instructions Claude follows in your conversation. The one script, `map_checks.py`, belongs to the previous version of test-mind-map. It runs on your machine and reads only the file you pass it. What you share in the conversation follows the terms of the Claude app you use. If you ask Claude to read or write your notes in a connected app such as Notion, it uses that connector under that app's terms, and it writes only after you say yes. [PRIVACY.md](PRIVACY.md) has the details.
+The plugin has no server and makes no network requests. The skills are instructions Claude follows in your conversation. The one script, `map_checks.py`, is part of test-mind-map. It runs on your machine and reads only the file you pass it. What you share in the conversation follows the terms of the Claude app you use. If you ask Claude to read or write your notes in a connected app such as Notion, it uses that connector under that app's terms, and it writes only after you say yes. [PRIVACY.md](PRIVACY.md) has the details.
 
 ## Limits
 
@@ -129,8 +129,8 @@ I learned much of how I study from iCanStudy, Dr Justin Sung's learning program 
 
 ```sh
 claude plugin validate --strict .                                                      # manifests and skill front matter
-python3 skills/test-mind-map-v1/scripts/map_checks.py examples/photosynthesis-map.json  # v1: structure report for the sample map
-python3 skills/test-mind-map-v1/scripts/map_checks.py examples/alinear-workspace.json   # v1: same checks on an ALinear export
+python3 skills/test-mind-map/scripts/map_checks.py examples/photosynthesis-map.json     # structure report for the sample map
+python3 skills/test-mind-map/scripts/map_checks.py examples/alinear-workspace.json      # same checks on an ALinear export
 claude --plugin-dir .                                                                  # one session with the skills, no install
 node marketing/tools/assets.mjs                                                        # rebuild the README images from the recorded session
 ```
@@ -143,6 +143,7 @@ skills/             one folder per skill: SKILL.md, references/, scripts/
 examples/           sample notes, a sample map, and ALinear's example export
 assets/icon.png     the listing icon
 marketing/tools/    README image capture and the recorded session, not part of the plugin
+specs/              design specs for the skills, not part of the plugin
 docs/assets/        the images this README shows
 ```
 
